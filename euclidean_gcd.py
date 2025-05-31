@@ -1,16 +1,13 @@
 def euclidean_gcd(a,b):
-    greater = 0
-    smaller = 0
-    if a>b:
-        a=greater
+    if(a==0):
+        return b
+    if(b==0):
+        return a
+    if(a==b):
+        return a
+    if(a>b):
+        return euclidean_gcd(a-b, b)
     else:
-        a=smaller
-    if b>a:
-        b=greater
-    else:
-        b=smaller
+        return euclidean_gcd(a, b-a)
     
-    res = greater/smaller
-    print(res)
-
-euclidean_gcd(5,10)
+print(euclidean_gcd(98,56))
